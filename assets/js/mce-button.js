@@ -52,9 +52,20 @@
                 },
                 {
                     text: 'Recent Posts',
-                    onclick: function() {
-                                editor.insertContent('[list_recent_posts category="" posts="2"]');
+                    menu: [
+                        {
+                            text: 'Recent Posts List',
+                            onclick: function() {
+                                editor.insertContent('[list_recent_posts category="" posts="2" ptype=""]');
                             }
+                        },
+                        {
+                            text: 'Recent Posts Carousel',
+                            onclick: function() {
+                                editor.insertContent('[carousel_recent_posts class="" category="" posts="2" ptype=""]');
+                            }
+                        },
+                    ]
                 },
                 {
                     text: 'Google Map',
@@ -67,6 +78,12 @@
                     onclick: function() {
                                 editor.insertContent('[custom_div class=""][/custom_div]');
                             }
+                },
+                {
+                    text: 'Carousel Wrap',
+                    onclick: function() {
+                        editor.insertContent('[carousel_wrap class=""][/carousel_wrap]');
+                    }
                 }
 				
 			]

@@ -203,3 +203,28 @@ function popup_video( $atts, $content = null ) {
 
 add_shortcode('popup_video', 'popup_video');
 
+/*carousel custom start*/
+function carousel_wrap( $atts, $content = null ) {
+
+    $atts = shortcode_atts(
+        array(
+            'class' => '',
+
+        ), $atts, 'carousel_wrap' );
+
+
+    $class = $atts['class'];
+
+    return '
+
+        <div class="'.$class.'">
+            ' . do_shortcode($content) . '
+        </div>'
+
+        ;
+
+}
+
+add_shortcode('carousel_wrap', 'carousel_wrap');
+
+/*rcarousel custom end*/
