@@ -26,6 +26,12 @@
                             onclick: function() {
                                 editor.insertContent('[img_section bgimg="" class="" overlay=""][/img_section]');
                             }
+                        },
+                        {
+                            text: 'Background Parallax Image',
+                            onclick: function() {
+                                editor.insertContent('[parallax_section bgimg="" class="" overlay=""][/parallax_section]');
+                            }
                         }
 
                     ]

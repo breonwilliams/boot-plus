@@ -68,6 +68,39 @@ function img_section( $atts, $content = null ) {
 
 add_shortcode('img_section', 'img_section');
 
+
+/* Full Width Parallax Section */
+function parallax_section( $atts, $content = null ) {
+    wp_enqueue_script( 'parallax' );
+    $atts = shortcode_atts(
+        array(
+            'bgimg' => '',
+            'overlay' => '',
+            'class' => '',
+        ), $atts, 'img_section' );
+
+
+    $bgimg = $atts['bgimg'];
+    $overlay = $atts['overlay'];
+    $class = $atts['class'];
+
+    return '
+
+   <section class="parallax-window" data-parallax="scroll" data-image-src="'.$bgimg.'">
+        <div class="'.$class.'" style="background:'.$overlay.';">
+            <div class="container">
+                ' . do_shortcode($content) . '
+            </div>
+        </div>
+    </section>
+
+    ';
+
+}
+
+add_shortcode('parallax_section', 'parallax_section');
+
+
 /* Custom Div */
 
 function custom_div( $atts, $content = null ) {
