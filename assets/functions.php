@@ -238,7 +238,8 @@ add_shortcode('popup_video', 'popup_video');
 
 /*carousel custom start*/
 function carousel_wrap( $atts, $content = null ) {
-
+    wp_enqueue_script( 'slick-js' );
+    wp_enqueue_script( 'slick-init' );
     $atts = shortcode_atts(
         array(
             'class' => '',
