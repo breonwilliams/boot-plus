@@ -25,13 +25,15 @@ function color_section( $atts, $content = null ) {
         array(
             'bgcolor' => '',
             'class' => '',
+            'flex' => '',
         ), $atts, 'color_section' );
 
 
-   $bgcolor = $atts['bgcolor'];
-   $class = $atts['class'];
-   
-   return '<section class="'.$class.'" style="background-color: '.$bgcolor.';"><div class="container">' . do_shortcode($content) . '</div></section>';
+    $bgcolor = $atts['bgcolor'];
+    $class = $atts['class'];
+    $flex = $atts['flex'];
+
+   return '<section class="'.$class.' '.$flex.'" style="background-color: '.$bgcolor.';"><div class="container">' . do_shortcode($content) . '</div></section>';
 
 }
 
@@ -45,16 +47,18 @@ function img_section( $atts, $content = null ) {
             'bgimg' => '',
             'overlay' => '',
             'class' => '',
+            'flex' => '',
         ), $atts, 'img_section' );
 
 
-   $bgimg = $atts['bgimg'];
-   $overlay = $atts['overlay'];
-   $class = $atts['class'];
-   
+    $bgimg = $atts['bgimg'];
+    $overlay = $atts['overlay'];
+    $class = $atts['class'];
+    $flex = $atts['flex'];
+
    return '
 
-   <section class="bg-img" style="background-image: url('.$bgimg.');">
+   <section class="bg-img '.$flex.'" style="background-image: url('.$bgimg.');">
         <div class="'.$class.'" style="background:'.$overlay.';">
             <div class="container">
                 ' . do_shortcode($content) . '
@@ -77,16 +81,18 @@ function parallax_section( $atts, $content = null ) {
             'bgimg' => '',
             'overlay' => '',
             'class' => '',
+            'flex' => '',
         ), $atts, 'img_section' );
 
 
     $bgimg = $atts['bgimg'];
     $overlay = $atts['overlay'];
     $class = $atts['class'];
+    $flex = $atts['flex'];
 
     return '
 
-   <section class="parallax-window" data-parallax="scroll" data-image-src="'.$bgimg.'">
+   <section class="parallax-window '.$flex.'" data-parallax="scroll" data-image-src="'.$bgimg.'">
         <div class="'.$class.'" style="background:'.$overlay.';">
             <div class="container">
                 ' . do_shortcode($content) . '

@@ -136,3 +136,27 @@ img {
 .marginlft-90 {
     margin-left: 90px;
 }
+
+.flex-wrap {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.flex-item .container {
+    width: auto!important;
+    padding-left: 10%;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .flex-wrap {
+        display: -webkit-flex;
+        -ms-flex-direction: column!important;
+        -webkit-box-orient: vertical!important;
+        flex-direction: column!important;
+    }
+}
