@@ -152,6 +152,13 @@ img {
     padding-right: 10px;
 }
 
+.parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+
 @media screen and (max-width: 768px) {
     .flex-wrap {
         display: -webkit-flex;

@@ -92,7 +92,7 @@ function parallax_section( $atts, $content = null ) {
 
     return '
 
-   <section class="parallax-window '.$flex.'" data-parallax="scroll" data-image-src="'.$bgimg.'">
+   <section class="parallax '.$flex.'" style="background-image:url('.$bgimg.');">
         <div class="'.$class.'" style="background:'.$overlay.';">
             <div class="container">
                 ' . do_shortcode($content) . '
