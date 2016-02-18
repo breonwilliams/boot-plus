@@ -124,6 +124,7 @@ function carousel_recent_posts( $atts ) {
                         <h3 class="thumb-heading"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
                         <p><?php the_excerpt(); ?></p>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <?php endwhile;
