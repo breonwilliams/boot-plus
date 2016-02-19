@@ -154,7 +154,9 @@ function background_vid( $atts, $content = null ) {
         <div class="video-overlay"></div>
         <div class="'.$padding.'">
             <div class="video-hero--content">
-                ' . do_shortcode($content) . '
+                <div class="container">
+                    ' . do_shortcode($content) . '
+                </div>
             </div>
         </div>
     </div>'
