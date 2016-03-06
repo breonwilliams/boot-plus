@@ -12,7 +12,7 @@
                         {
                             text: 'Background Video Section',
                             onclick: function() {
-                                editor.insertContent('[background_vid poster="" mp4="" padding=""][/background_vid]');
+                                editor.insertContent('[background_vid poster="" mp4="" padding="pad-100"][/background_vid]');
                             }
                         },
                         {
@@ -68,7 +68,7 @@
                         {
                             text: 'Recent Posts Carousel',
                             onclick: function() {
-                                editor.insertContent('[carousel_recent_posts class="" category="" posts="2" ptype=""]');
+                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" posts="2" ptype=""]');
                             }
                         },
                     ]
@@ -88,7 +88,7 @@
                 {
                     text: 'Carousel Wrap',
                     onclick: function() {
-                        editor.insertContent('[carousel_wrap class=""][/carousel_wrap]');
+                        editor.insertContent('[carousel_wrap class="slick-1"][/carousel_wrap]');
                     }
                 },
                 {
