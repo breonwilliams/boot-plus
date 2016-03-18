@@ -10,8 +10,6 @@ Full Width Video
     bottom: 0;
     right: 0;
     pointer-events: none; /* Allows right click menu on the video */
-    background: #000;
-    opacity: .5;
 }
 
 .video-hero--content {
