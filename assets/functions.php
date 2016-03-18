@@ -139,19 +139,21 @@ function background_vid( $atts, $content = null ) {
             'poster' => '',
             'mp4' => '',
             'padding' => '',
+            'overlay' => '',
         ), $atts, 'background_vid' );
 
 
     $poster = $atts['poster'];
     $mp4 = $atts['mp4'];
     $padding = $atts['padding'];
+    $overlay = $atts['overlay'];
     return '
 
 <div class="video-hero jquery-background-video-wrapper demo-video-wrapper">
         <video class="jquery-background-video" autoplay muted loop poster="'.$poster.'">
             <source src="'.$mp4.'" type="video/mp4">
         </video>
-        <div class="video-overlay"></div>
+        <div class="video-overlay" style="background:'.$overlay.';"></div>
         <div class="'.$padding.'">
             <div class="video-hero--content">
                 <div class="container">

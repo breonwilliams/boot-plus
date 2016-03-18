@@ -12,7 +12,7 @@
                         {
                             text: 'Background Video Section',
                             onclick: function() {
-                                editor.insertContent('[background_vid poster="" mp4="" padding="pad-100"][/background_vid]');
+                                editor.insertContent('[background_vid poster="" mp4="" padding="pad-100" overlay=""][/background_vid]');
                             }
                         },
                         {
