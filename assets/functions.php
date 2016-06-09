@@ -272,6 +272,21 @@ function carousel_wrap( $atts, $content = null ) {
 
 add_shortcode('carousel_wrap', 'carousel_wrap');
 
+function carousel_item( $atts, $content = null ) {
+
+    $atts = shortcode_atts(
+        array(
+            'class' => '',
+        ), $atts, 'carousel_item' );
+
+    $class = $atts['class'];
+
+    return '<div class="'.$class.'" >' . do_shortcode($content) . '</div>';
+
+}
+
+add_shortcode('carousel_item', 'carousel_item');
+
 /*rcarousel custom end*/
 
 
