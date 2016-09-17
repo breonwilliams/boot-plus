@@ -180,8 +180,8 @@ img {
 }
 
 .flex-wrap {
-    display: -webkit-flex;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-item {
@@ -191,14 +191,7 @@ img {
 .flex-item .container {
     width: auto!important;
     padding-left: 10%;
-    padding-right: 10px;
-}
-
-.parallax {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-attachment: fixed;
+    padding-right: 10%;
 }
 
 @media screen and (max-width: 768px) {
@@ -208,4 +201,11 @@ img {
         -webkit-box-orient: vertical!important;
         flex-direction: column!important;
     }
+}
+
+.parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
 }
