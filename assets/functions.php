@@ -25,15 +25,17 @@ function color_section( $atts, $content = null ) {
         array(
             'bgcolor' => '',
             'class' => '',
+            'id' => '',
             'flex' => '',
         ), $atts, 'color_section' );
 
 
     $bgcolor = $atts['bgcolor'];
     $class = $atts['class'];
+    $id = $atts['id'];
     $flex = $atts['flex'];
 
-   return '<section class="'.$class.' '.$flex.'" style="background-color: '.$bgcolor.';"><div class="container">' . do_shortcode($content) . '</div></section>';
+   return '<section id="'.$id.'" class="'.$class.' '.$flex.'" style="background-color: '.$bgcolor.';"><div class="container">' . do_shortcode($content) . '</div></section>';
 
 }
 
@@ -47,6 +49,7 @@ function img_section( $atts, $content = null ) {
             'bgimg' => '',
             'overlay' => '',
             'class' => '',
+            'id' => '',
             'flex' => '',
         ), $atts, 'img_section' );
 
@@ -54,11 +57,12 @@ function img_section( $atts, $content = null ) {
     $bgimg = $atts['bgimg'];
     $overlay = $atts['overlay'];
     $class = $atts['class'];
+    $id = $atts['id'];
     $flex = $atts['flex'];
 
    return '
 
-   <section class="bg-img '.$flex.'" style="background-image: url('.$bgimg.');">
+   <section id="'.$id.'" class="bg-img '.$flex.'" style="background-image: url('.$bgimg.');">
         <div class="'.$class.'" style="background:'.$overlay.';">
             <div class="container">
                 ' . do_shortcode($content) . '
@@ -81,6 +85,7 @@ function parallax_section( $atts, $content = null ) {
             'bgimg' => '',
             'overlay' => '',
             'class' => '',
+            'id' => '',
             'flex' => '',
         ), $atts, 'img_section' );
 
@@ -88,11 +93,12 @@ function parallax_section( $atts, $content = null ) {
     $bgimg = $atts['bgimg'];
     $overlay = $atts['overlay'];
     $class = $atts['class'];
+    $id = $atts['id'];
     $flex = $atts['flex'];
 
     return '
 
-   <section class="parallax '.$flex.'" style="background-image:url('.$bgimg.');">
+   <section id="'.$id.'" class="parallax '.$flex.'" style="background-image:url('.$bgimg.');">
         <div class="'.$class.'" style="background:'.$overlay.';">
             <div class="container">
                 ' . do_shortcode($content) . '
@@ -139,6 +145,8 @@ function background_vid( $atts, $content = null ) {
             'poster' => '',
             'mp4' => '',
             'padding' => '',
+            'class' => '',
+            'id' => '',
             'overlay' => '',
         ), $atts, 'background_vid' );
 
@@ -146,10 +154,12 @@ function background_vid( $atts, $content = null ) {
     $poster = $atts['poster'];
     $mp4 = $atts['mp4'];
     $padding = $atts['padding'];
+    $class = $atts['class'];
+    $id = $atts['id'];
     $overlay = $atts['overlay'];
     return '
 
-<div class="video-hero jquery-background-video-wrapper demo-video-wrapper">
+<div id="'.$id.'" class="video-hero jquery-background-video-wrapper demo-video-wrapper '.$class.'">
         <video class="jquery-background-video" autoplay muted loop poster="'.$poster.'">
             <source src="'.$mp4.'" type="video/mp4">
         </video>

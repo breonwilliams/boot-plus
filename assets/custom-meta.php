@@ -26,7 +26,7 @@ function meta_box_callback( $post )
     ?>
     <p>
         <label for="meta_box_slider_embed"><p>Insert your slider shortcode here.</p></label>
-        <textarea name="meta_box_slider_embed" id="meta_box_slider_embed" cols="30" rows="1" ><?php echo $selected; ?></textarea>
+        <textarea name="meta_box_slider_embed" id="meta_box_slider_embed" cols="40" rows="1" style="width: 100%; height: 4em;" ><?php echo $selected; ?></textarea>
     </p>
     <p>Leave this field Empty if you do not want to use a slider. Insert <strong>full_above_content_area();</strong> outside of fixed width container.</p>
     <?php   
@@ -106,7 +106,7 @@ function meta_box_callback_map( $post )
     ?>
     <p>
         <label for="meta_box_map_embed"><p>Insert your map shortcode here.</p></label>
-        <textarea name="meta_box_map_embed" id="meta_box_map_embed" cols="30" rows="1" ><?php echo $selected; ?></textarea>
+        <textarea name="meta_box_map_embed" id="meta_box_map_embed" cols="40" rows="1" style="width: 100%; height: 4em;"><?php echo $selected; ?></textarea>
     </p>
     <p>Leave this field Empty if you do not want to use a map. Insert <strong>full_below_content_area();</strong> outside of fixed width container.</p>
     <?php   
