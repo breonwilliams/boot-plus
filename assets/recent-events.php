@@ -18,8 +18,11 @@ function ckhp_get_tribe_list($atts) {
     extract( shortcode_atts( array(
         'cat' => '',
         'number' => 5,
+        'class' => '',
         'error' => 'y'
     ), $atts, 'ckhp-tribe-events' ), EXTR_PREFIX_ALL, 'ckhp' );
+
+    $class = $atts['class'];
 
     if ( $ckhp_cat ) {
         $ckhp_event_tax = array(
@@ -41,7 +44,7 @@ function ckhp_get_tribe_list($atts) {
 
         if ( $posts && !$no_upcoming_events) {
 
-            $output .= '<div class="event-calendar">';
+            $output .= '<div class="event-calendar '.$class.'">';
             foreach( $posts as $post ) :
                 setup_postdata( $post );
                 $output .= '<a href="' . tribe_get_event_link() . '" rel="bookmark">';

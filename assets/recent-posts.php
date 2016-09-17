@@ -13,7 +13,10 @@ function list_recent_posts( $atts ) {
         'posts' => 4,
         'category' => '',
         'ptype' => '',
+        'class' => '',
     ), $atts ) );
+
+    $class = $atts['class'];
 
     // define query parameters based on attributes
     $options = array(
@@ -25,7 +28,7 @@ function list_recent_posts( $atts ) {
     // run the loop based on the query
     if ( $query->have_posts() ) { ?>
 
-<ul class="media recent-posts">
+<ul class="media recent-posts <?php echo $class; ?>">
 
 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
     <li class="media-listitem">
