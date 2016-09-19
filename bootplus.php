@@ -21,7 +21,7 @@ function bootplus_shortcodes_add_scripts() {
     /* Includes */
     include($bootplus_shortcodes_path.'/assets/functions.php');
       wp_enqueue_style('style-css', $bootplus_shortcodes_directory.'assets/css/style.css');
-      wp_enqueue_style('popupvid-css', $bootplus_shortcodes_directory.'assets/css/magnific-popup.css');
+      wp_enqueue_style('lity-css', $bootplus_shortcodes_directory.'assets/css/lity.css');
       wp_enqueue_style('bgvid-css', $bootplus_shortcodes_directory.'assets/css/background-vid.css');
       wp_enqueue_style('events-css', $bootplus_shortcodes_directory.'assets/css/recent-events.css');
       wp_enqueue_style('slick-css', $bootplus_shortcodes_directory.'assets/css/slick.css');
@@ -33,8 +33,7 @@ add_filter('init', 'bootplus_shortcodes_add_scripts');
 
 function wpb_adding_scripts() {
   global $bootplus_shortcodes_directory, $bootplus_shortcodes_path;
-    wp_register_script( 'popupvid-min', $bootplus_shortcodes_directory.'assets/js/jquery.magnific-popup.min.js', 'jquery','1.0',true);
-    wp_register_script( 'popupvid-js', $bootplus_shortcodes_directory.'assets/js/magnificPopup.js', 'jquery','1.0',true);
+    wp_register_script( 'lity-js', $bootplus_shortcodes_directory.'assets/js/lity.js', 'jquery','1.0',true);
     wp_register_script( 'bgvid', $bootplus_shortcodes_directory.'assets/js/jquery.background-video.js', 'jquery','1.0',true);
     wp_register_script( 'bgvid-js', $bootplus_shortcodes_directory.'assets/js/background-video.js', 'jquery','1.0',true);
     wp_register_script( 'slick-js', $bootplus_shortcodes_directory.'assets/js/slick.js', 'jquery','1.0',true);

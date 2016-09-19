@@ -234,8 +234,7 @@ add_shortcode('boot_modal', 'boot_modal');
 /* Popup Video */
 
 function popup_video( $atts, $content = null ) {
-    wp_enqueue_script( 'popupvid-min' );  
-    wp_enqueue_script( 'popupvid-js' );
+    wp_enqueue_script( 'lity-js' );
 
     $atts = shortcode_atts(
         array(
@@ -248,7 +247,7 @@ function popup_video( $atts, $content = null ) {
 
     return '
 
-        <a href="'.$url.'" class="'.$class.' popup-video">' . do_shortcode($content) . '</a>
+        <a href="'.$url.'" class="'.$class.'" data-lity>' . do_shortcode($content) . '</a>
         '
 
         ;
