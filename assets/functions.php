@@ -120,11 +120,13 @@ function custom_div( $atts, $content = null ) {
    $atts = shortcode_atts(
         array(
             'class' => '',
+            'id' => '',
         ), $atts, 'custom_div' );
 
-   $class = $atts['class'];
+    $class = $atts['class'];
+    $id = $atts['id'];
    
-   return '<div class="'.$class.'" >' . do_shortcode($content) . '</div>';
+   return '<div id="'.$id.'" class="'.$class.'" >' . do_shortcode($content) . '</div>';
 
 }
 
