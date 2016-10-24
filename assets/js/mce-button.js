@@ -86,10 +86,21 @@
                             }
                 },
                 {
-                    text: 'Carousel Wrap',
-                    onclick: function() {
-                        editor.insertContent('[carousel_wrap class="slick-1"][/carousel_wrap]');
-                    }
+                    text: 'Carousel',
+                    menu: [
+                        {
+                            text: 'Carousel Wrap',
+                            onclick: function() {
+                                editor.insertContent('[carousel_wrap class="slick-1"][/carousel_wrap]');
+                            }
+                        },
+                        {
+                            text: 'Carousel Item',
+                            onclick: function() {
+                                editor.insertContent('[carousel_item class=""][/carousel_item]');
+                            }
+                        },
+                    ]
                 },
                 {
                     text: 'Login/Logout',
