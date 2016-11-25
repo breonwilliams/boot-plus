@@ -200,4 +200,102 @@
   }
 }
 
+.basic_list_cmg_content {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list_row {
+  width: 100%;
+  padding: 10px 12px 10px 0px;
+  border-bottom: 1px solid rgba(177, 165, 145, .2);
+  display: inline-block;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 80px;
+}
+
+.list_row_date {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding: 14px 13px;
+  border-right: 1px solid rgba(177, 165, 145, .2);
+  margin-right: 13px;
+}
+
+.list_row .list_row_date .event_day_name_alt {
+  text-transform: uppercase;
+  line-height: 1em;
+  text-align: center;
+  margin-bottom: 3px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-style: inherit;
+  vertical-align: baseline;
+}
+
+.list_row .list_row_date .event_day_number_alt {
+  line-height: .7em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-style: inherit;
+  vertical-align: baseline;
+}
+
+.list_row_info {
+  vertical-align: middle;
+  padding-right: 50px;
+  margin: 0 0 0 78px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+
+.list_row_info h4 {
+  margin: 10px 0 3px;
+  text-transform: uppercase;
+}
+
+.list_row_info p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1em;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+}
+
+.btn_details {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .btn_details {
+    display: none!important;
+  }
+}
+
+
 /*Tribe Event List End*/
