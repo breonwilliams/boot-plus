@@ -226,6 +226,7 @@
   padding: 14px 13px;
   border-right: 1px solid rgba(177, 165, 145, .2);
   margin-right: 13px;
+  width: 65px;
 }
 
 .list_row .list_row_date .event_day_name_alt {
