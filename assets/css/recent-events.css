@@ -206,7 +206,7 @@
   padding: 0;
 }
 
-.list_row {
+.list_row a {
   width: 100%;
   padding: 10px 12px 10px 0px;
   border-bottom: 1px solid rgba(177, 165, 145, .2);

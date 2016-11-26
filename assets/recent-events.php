@@ -125,6 +125,7 @@ function ckhp_get_tribe_list2($atts) {
                 $output .= '<h4>' . get_the_title() . '</h4>';
                 $output .= '<p>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'l') . ' ' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'g:i a') . '</p>';
                 $output .= '</div>';
+                $output .= '</div>';
                 $output .= '</a>';
                 $output .= '</li>';
             endforeach;
