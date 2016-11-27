@@ -21,12 +21,19 @@ function meta_box_callback( $post )
 {
     $values = get_post_custom( $post->ID );
     $selected = isset( $values['meta_box_slider_embed'] ) ? $values['meta_box_slider_embed'][0] : '';
+    $meta_box_slider_embed = get_post_meta( $post->ID, 'meta_box_slider_embed', true );
 
     wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
     ?>
     <p>
         <label for="meta_box_slider_embed"><p>Insert your slider shortcode here.</p></label>
-        <textarea name="meta_box_slider_embed" id="meta_box_slider_embed" cols="40" rows="1" style="width: 100%; height: 4em;" ><?php echo $selected; ?></textarea>
+
+        <?php wp_editor($meta_box_slider_embed, 'biography', array(
+            'wpautop'               =>      true,
+            'media_buttons' =>      false,
+            'textarea_name' =>      'meta_box_slider_embed',
+            'textarea_rows' =>      10
+        )); ?>
     </p>
     <p>Leave this field Empty if you do not want to use a slider. Insert <strong>full_above_content_area();</strong> outside of fixed width container.</p>
     <?php   
@@ -53,8 +60,11 @@ function meta_box_slider_save( $post_id )
 
     // Probably a good idea to make sure your data is set
 
-    if( isset( $_POST['meta_box_slider_embed'] ) )
+    if( isset( $_POST['meta_box_slider_embed'] ) && $_POST['meta_box_slider_embed'] != '' ) {
         update_post_meta( $post_id, 'meta_box_slider_embed', $_POST['meta_box_slider_embed'] );
+    } else {
+        delete_post_meta( $post_id, 'meta_box_slider_embed' );
+    }
 
 }
 
@@ -101,12 +111,18 @@ function meta_box_callback_map( $post )
 {
     $values = get_post_custom( $post->ID );
     $selected = isset( $values['meta_box_map_embed'] ) ? $values['meta_box_map_embed'][0] : '';
+    $meta_box_map_embed = get_post_meta( $post->ID, 'meta_box_map_embed', true );
 
     wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
     ?>
     <p>
         <label for="meta_box_map_embed"><p>Insert your map shortcode here.</p></label>
-        <textarea name="meta_box_map_embed" id="meta_box_map_embed" cols="40" rows="1" style="width: 100%; height: 4em;"><?php echo $selected; ?></textarea>
+        <?php wp_editor($meta_box_map_embed, 'mapp', array(
+            'wpautop'               =>      true,
+            'media_buttons' =>      false,
+            'textarea_name' =>      'meta_box_map_embed',
+            'textarea_rows' =>      10
+        )); ?>
     </p>
     <p>Leave this field Empty if you do not want to use a map. Insert <strong>full_below_content_area();</strong> outside of fixed width container.</p>
     <?php   
@@ -133,8 +149,11 @@ function meta_box_map_save( $post_id )
 
     // Probably a good idea to make sure your data is set
 
-    if( isset( $_POST['meta_box_map_embed'] ) )
+    if( isset( $_POST['meta_box_map_embed'] ) && $_POST['meta_box_map_embed'] != '' ) {
         update_post_meta( $post_id, 'meta_box_map_embed', $_POST['meta_box_map_embed'] );
+    } else {
+        delete_post_meta( $post_id, 'meta_box_map_embed' );
+    }
 
 }
 
