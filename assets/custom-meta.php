@@ -10,11 +10,19 @@ add_action( 'add_meta_boxes', 'meta_box_slider' );
 function meta_box_slider()
 {                                      // --- Parameters: ---
     add_meta_box( 'slider-meta-box-id', // ID attribute of metabox
-                  'Full Width Slider Shortcode',       // Title of metabox visible to user
-                  'meta_box_callback', // Function that prints box in wp-admin
-                  'page',              // Show box for posts, pages, custom, etc.
-                  'normal',            // Where on the page to show the box
-                  'high' );            // Priority of box in display order
+        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'meta_box_callback', // Function that prints box in wp-admin
+        'page',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
+
+    add_meta_box(
+        'slider-meta-box-id', // ID attribute of metabox
+        'Full Width Slider Shortcode',       // Title of metabox visible to user
+        'meta_box_callback', // Function that prints box in wp-admin
+        'post',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
 }
 
 function meta_box_callback( $post )
@@ -26,7 +34,7 @@ function meta_box_callback( $post )
     wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
     ?>
     <p>
-        <label for="meta_box_slider_embed"><p>Insert your slider shortcode here.</p></label>
+        <label for="meta_box_slider_embed"><p>This will display below the header.</p></label>
 
         <?php wp_editor($meta_box_slider_embed, 'biography', array(
             'wpautop'               =>      true,
@@ -36,7 +44,7 @@ function meta_box_callback( $post )
         )); ?>
     </p>
     <p>Leave this field Empty if you do not want to use a slider. Insert <strong>full_above_content_area();</strong> outside of fixed width container.</p>
-    <?php   
+    <?php
 }
 
 add_action( 'save_post', 'meta_box_slider_save' );
@@ -52,7 +60,7 @@ function meta_box_slider_save( $post_id )
     if( !current_user_can( 'edit_post' ) ) return;
 
     // now we can actually save the data
-    $allowed = array( 
+    $allowed = array(
         'a' => array( // on allow a tags
             'href' => array() // and those anchords can only have href attribute
         )
@@ -100,11 +108,18 @@ add_action( 'add_meta_boxes', 'meta_box_map' );
 function meta_box_map()
 {                                      // --- Parameters: ---
     add_meta_box( 'map-meta-box-id', // ID attribute of metabox
-                  'Full Width Map Shortcode',       // Title of metabox visible to user
-                  'meta_box_callback_map', // Function that prints box in wp-admin
-                  'page',              // Show box for posts, pages, custom, etc.
-                  'normal',            // Where on the page to show the box
-                  'high' );            // Priority of box in display order
+        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'meta_box_callback_map', // Function that prints box in wp-admin
+        'page',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
+    add_meta_box(
+        'map-meta-box-id', // ID attribute of metabox
+        'Full Width Footer Shortcode',       // Title of metabox visible to user
+        'meta_box_callback_map', // Function that prints box in wp-admin
+        'post',              // Show box for posts, pages, custom, etc.
+        'normal',            // Where on the page to show the box
+        'high' );            // Priority of box in display order
 }
 
 function meta_box_callback_map( $post )
@@ -116,7 +131,7 @@ function meta_box_callback_map( $post )
     wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
     ?>
     <p>
-        <label for="meta_box_map_embed"><p>Insert your map shortcode here.</p></label>
+        <label for="meta_box_map_embed"><p>This will display above the footer.</p></label>
         <?php wp_editor($meta_box_map_embed, 'mapp', array(
             'wpautop'               =>      true,
             'media_buttons' =>      false,
@@ -125,7 +140,7 @@ function meta_box_callback_map( $post )
         )); ?>
     </p>
     <p>Leave this field Empty if you do not want to use a map. Insert <strong>full_below_content_area();</strong> outside of fixed width container.</p>
-    <?php   
+    <?php
 }
 
 add_action( 'save_post', 'meta_box_map_save' );
@@ -141,7 +156,7 @@ function meta_box_map_save( $post_id )
     if( !current_user_can( 'edit_post' ) ) return;
 
     // now we can actually save the data
-    $allowed = array( 
+    $allowed = array(
         'a' => array( // on allow a tags
             'href' => array() // and those anchords can only have href attribute
         )
@@ -178,3 +193,19 @@ function full_below_content_area(){
 
 
 }
+
+
+// Custom Menu logo
+
+function m3_customize_register( $wp_customize ) {
+    $wp_customize->add_setting( 'm3_logo' ); // Add setting for logo uploader
+
+    // Add control for logo uploader (actual uploader)
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'm3_logo', array(
+        'label'    => __( 'Upload Custom Menu Logo', 'm3' ),
+        'section'  => 'title_tagline',
+        'settings' => 'm3_logo',
+        'priority' => 35,
+    ) ) );
+}
+add_action( 'customize_register', 'm3_customize_register' );

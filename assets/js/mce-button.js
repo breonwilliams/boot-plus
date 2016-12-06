@@ -62,22 +62,22 @@
                         {
                             text: 'Recent Posts List',
                             onclick: function() {
-                                editor.insertContent('[list_recent_posts category="" posts="2" ptype=""]');
+                                editor.insertContent('[list_recent_posts category="" class="" ptype="" per_page="4"]');
+                            }
+                        },
+                        {
+                            text: 'Recent Posts Thumbnails',
+                            onclick: function() {
+                                editor.insertContent('[thumb_recent_posts column="col-md-4" class="" ptype="" per_page="4"]');
                             }
                         },
                         {
                             text: 'Recent Posts Carousel',
                             onclick: function() {
-                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" posts="2" ptype=""]');
+                                editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="" per_page="8"]');
                             }
                         },
                     ]
-                },
-                {
-                    text: 'Google Map',
-                    onclick: function() {
-                                editor.insertContent('[googlemap id="myMap1" height="" zoom="15" lat="35.905160" long="-79.046908" title="The University of North Carolina at Chapel Hill"]');
-                            }
                 },
                 {
                     text: 'Custom Div',
@@ -101,6 +101,29 @@
                             }
                         },
                     ]
+                },
+                {
+                    text: 'Custom Menu',
+                    menu: [
+                        {
+                            text: 'Menu Wrapper',
+                            onclick: function() {
+                                editor.insertContent('[pushm_wrap class=""][/pushm_wrap]');
+                            }
+                        },
+                        {
+                            text: 'Menu',
+                            onclick: function() {
+                                editor.insertContent('[listmenu menu="" menu_class=""]');
+                            }
+                        },
+                    ]
+                },
+                {
+                    text: 'Search Overlay',
+                    onclick: function() {
+                        editor.insertContent('[search_overlay]');
+                    }
                 },
                 {
                     text: 'Login/Logout',
