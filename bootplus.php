@@ -47,6 +47,8 @@ function wpb_adding_scripts() {
     wp_register_script( 'masonry-init', $bootplus_shortcodes_directory.'assets/js/masonry/masonry-init.js', 'jquery','1.0',true);
     wp_register_script( 'pmenu-main', $bootplus_shortcodes_directory.'assets/js/menu/main.js', 'jquery','1.0',true);
     wp_register_script( 'search-overlay', $bootplus_shortcodes_directory.'assets/js/search-overlay.js', 'jquery','1.0',true);
+    wp_register_script( 'imagesLoaded-js', $bootplus_shortcodes_directory.'assets/js/masonry/imagesLoaded.pkgd.min.js', 'jquery','1.0',true);
+    wp_register_script( 'imagesLoaded-init', $bootplus_shortcodes_directory.'assets/js/masonry/imagesloaded-init.js', 'jquery','1.0',true);
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' ); 
