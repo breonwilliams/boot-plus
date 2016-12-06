@@ -21,11 +21,11 @@ function bootplus_shortcodes_add_scripts() {
     /* Includes */
     include($bootplus_shortcodes_path.'/assets/functions.php');
       wp_enqueue_style('style-css', $bootplus_shortcodes_directory.'assets/css/style.css');
-      wp_enqueue_style('lity-css', $bootplus_shortcodes_directory.'assets/css/lity.css');
-      wp_enqueue_style('bgvid-css', $bootplus_shortcodes_directory.'assets/css/background-vid.css');
-      wp_enqueue_style('events-css', $bootplus_shortcodes_directory.'assets/css/recent-events.css');
-      wp_enqueue_style('slick-css', $bootplus_shortcodes_directory.'assets/css/slick.css');
-      wp_enqueue_style('slick-theme', $bootplus_shortcodes_directory.'assets/css/slick-theme.css');
+      wp_register_style( 'events-css', plugins_url( '/assets/css/recent-events.css', __FILE__ ), array(), '1.0.0', all );
+      wp_register_style( 'lity-css', plugins_url( '/assets/css/lity.css', __FILE__ ), array(), '1.0.0', all );
+      wp_register_style( 'bgvid-css', plugins_url( '/assets/css/background-vid.css', __FILE__ ), array(), '1.0.0', all );
+      wp_register_style( 'slick-css', plugins_url( '/assets/css/slick.css', __FILE__ ), array(), '1.0.0', all );
+      wp_register_style( 'slick-theme', plugins_url( '/assets/css/slick-theme.css', __FILE__ ), array(), '1.0.0', all );
       wp_register_style( 'masonry-css', plugins_url( '/assets/css/masonry/styles.css', __FILE__ ), array(), '1.0.0', all );
       wp_register_style( 'pmenu-style', plugins_url( '/assets/css/menu/style.css', __FILE__ ), array(), '1.0.0', all );
       wp_register_style( 'search-css', plugins_url( '/assets/css/search-overlay.css', __FILE__ ), array(), '1.0.0', all );
