@@ -3,11 +3,9 @@
  */
 
 jQuery(function($) {
-    $(document).ready(function() {
-        var $container = $(".mgrid");
+    var $container = $(".mgrid");
 
-        $container.imagesLoaded(function () {
-            $container.masonry();
-        });
+    $container.imagesLoaded(function () {
+        $container.masonry();
     });
 });
