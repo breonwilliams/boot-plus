@@ -86,6 +86,23 @@
                             }
                 },
                 {
+                    text: 'Custom Ordered List',
+                    menu: [
+                        {
+                            text: 'List Wrap',
+                            onclick: function() {
+                                editor.insertContent('[orderedlist_wrap][/orderedlist_wrap]');
+                            }
+                        },
+                        {
+                            text: 'List Item',
+                            onclick: function() {
+                                editor.insertContent('[orderedlist_item label=""][/orderedlist_item]');
+                            }
+                        },
+                    ]
+                },
+                {
                     text: 'Carousel',
                     menu: [
                         {

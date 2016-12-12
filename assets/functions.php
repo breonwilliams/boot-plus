@@ -132,6 +132,40 @@ function custom_div( $atts, $content = null ) {
 
 add_shortcode('custom_div', 'custom_div');
 
+/* Custom Div */
+
+function orderedlist_wrap( $atts, $content = null ) {
+
+    $atts = shortcode_atts(
+        array(
+            'class' => '',
+            'id' => '',
+        ), $atts, 'custom_div' );
+
+    $class = $atts['class'];
+    $id = $atts['id'];
+
+    return '<dl id="'.$id.'" class="orderedList '.$class.'" >' . do_shortcode($content) . '</dl>';
+
+}
+
+add_shortcode('orderedlist_wrap', 'orderedlist_wrap');
+
+function orderedlist_item( $atts, $content = null ) {
+
+    $atts = shortcode_atts(
+        array(
+            'label' => '',
+        ), $atts, 'custom_div' );
+
+    $label = $atts['label'];
+
+    return '<div class="orderedList-wrap" ><dt>'.$label.'</dt><dd>' . do_shortcode($content) . '</dd></div>';
+
+}
+
+add_shortcode('orderedlist_item', 'orderedlist_item');
+
 /* Search Overlay */
 
 function search_overlay( $form ) {

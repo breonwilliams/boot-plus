@@ -226,3 +226,35 @@ img {
     margin-top: 7px;
     border: 1px solid #ddd;
 }
+
+/* Custom Ordered List */
+
+.orderedList-wrap {
+    color: #044570;
+    text-decoration: none;
+}
+.orderedList .orderedList-wrap:nth-child(2n+1) {
+    clear: both;
+}
+.orderedList {
+    counter-reset: my-badass-counter;
+}
+.orderedList dt {
+    position: relative;
+    font: bold 26px Georgia;
+    padding: 4px 0 10px 0;
+}
+.orderedList dt:before {
+    content: counter(my-badass-counter);
+    counter-increment: my-badass-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font: bold 50px/1 Sans-Serif;
+}
+.orderedList dd {
+    margin: 0 0 50px 50px;
+}
+.orderedList dt, .faq dd {
+    padding-left: 50px;
+}
