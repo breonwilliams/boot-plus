@@ -265,7 +265,7 @@ img {
     font: bold 50px/1 Sans-Serif;
 }
 .orderedList dd {
-    margin: 0 0 0 50px;
+    margin: 0 0 50px 50px;
 }
 .orderedList dt, .faq dd {
     padding-left: 50px;
