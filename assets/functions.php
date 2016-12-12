@@ -156,11 +156,13 @@ function orderedlist_item( $atts, $content = null ) {
     $atts = shortcode_atts(
         array(
             'label' => '',
+            'class' => '',
         ), $atts, 'custom_div' );
 
     $label = $atts['label'];
+    $class = $atts['class'];
 
-    return '<div class="orderedList-wrap" ><dt>'.$label.'</dt><dd>' . do_shortcode($content) . '</dd></div>';
+    return '<div class="orderedList-wrap '.$class.'" ><dt>'.$label.'</dt><dd>' . do_shortcode($content) . '</dd></div>';
 
 }
 
