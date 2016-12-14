@@ -186,6 +186,7 @@ img {
 
 .flex-item {
     flex: 1;
+    position: relative;
 }
 
 .flex-item .container {
