@@ -30,6 +30,10 @@ function bootplus_shortcodes_add_scripts() {
       wp_register_style( 'pmenu-style', plugins_url( '/assets/css/menu/style.css', __FILE__ ), array(), '1.0.0', all );
       wp_register_style( 'popOut-style', plugins_url( '/assets/css/menu/popOut-style.css', __FILE__ ), array(), '1.0.0', all );
       wp_register_style( 'search-css', plugins_url( '/assets/css/search-overlay.css', __FILE__ ), array(), '1.0.0', all );
+    wp_register_style( 'dataTables-css', plugins_url( '/assets/css/datatables/datatables.min.css', __FILE__ ), array(), '1.0.0', all );
+    wp_register_style( 'dataTables-bootstrap', plugins_url( '/assets/css/datatables/dataTables.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
+    wp_register_style( 'dataTables-buttons', plugins_url( '/assets/css/datatables/buttons.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
+    wp_register_style( 'dataTables-responsive', plugins_url( '/assets/css/datatables/responsive.bootstrap.min.css', __FILE__ ), array(), '1.0.0', all );
         }}
 add_filter('init', 'bootplus_shortcodes_add_scripts');
 
@@ -51,6 +55,22 @@ function wpb_adding_scripts() {
     wp_register_script( 'search-overlay', $bootplus_shortcodes_directory.'assets/js/search-overlay.js', 'jquery','1.0',true);
     wp_register_script( 'imagesLoaded-js', $bootplus_shortcodes_directory.'assets/js/masonry/imagesLoaded.pkgd.min.js', 'jquery','1.0',true);
     wp_register_script( 'imagesLoaded-init', $bootplus_shortcodes_directory.'assets/js/masonry/imagesloaded-init.js', 'jquery','1.0',true);
+
+  wp_register_script( 'dataTables-init', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables-init.js', 'jquery','1.0',true);
+  wp_register_script( 'dataTables-min', $bootplus_shortcodes_directory.'assets/js/datatables/jquery.dataTables.min.js', 'jquery','1.0',true);
+  wp_register_script( 'buttons-min', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables.buttons.min.js', 'jquery','1.0',true);
+  wp_register_script( 'colVis-js', $bootplus_shortcodes_directory.'assets/js/datatables/buttons.colVis.min.js', 'jquery','1.0',true);
+  wp_register_script( 'html5-js', $bootplus_shortcodes_directory.'assets/js/datatables/buttons.html5.min.js', 'jquery','1.0',true);
+  wp_register_script( 'print-js', $bootplus_shortcodes_directory.'assets/js/datatables/buttons.print.min.js', 'jquery','1.0',true);
+  wp_register_script( 'databootstrap-js', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables.bootstrap.min.js', 'jquery','1.0',true);
+  wp_register_script( 'buttonsboot-js', $bootplus_shortcodes_directory.'assets/js/datatables/buttons.bootstrap.min.js', 'jquery','1.0',true);
+  wp_register_script( 'jszip-js', $bootplus_shortcodes_directory.'assets/js/datatables/jszip.min.js', 'jquery','1.0',true);
+  wp_register_script( 'pdfmake-js', $bootplus_shortcodes_directory.'assets/js/datatables/pdfmake.min.js', 'jquery','1.0',true);
+  wp_register_script( 'vfs_fonts-js', $bootplus_shortcodes_directory.'assets/js/datatables/vfs_fonts.js', 'jquery','1.0',true);
+  wp_register_script( 'responsive-js', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables.responsive.min.js', 'jquery','1.0',true);
+  wp_register_script( 'moment-js', $bootplus_shortcodes_directory.'assets/js/datatables/moment.min.js', 'jquery','1.0',true);
+  wp_register_script( 'datetime-js', $bootplus_shortcodes_directory.'assets/js/datatables/datetime-moment.js', 'jquery','1.0',true);
+  wp_register_script( 'responsive-bootstrap', $bootplus_shortcodes_directory.'assets/js/datatables/responsive.bootstrap.min.js', 'jquery','1.0',true);
 }
 
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' ); 

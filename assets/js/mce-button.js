@@ -77,6 +77,12 @@
                                 editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="" per_page="8"]');
                             }
                         },
+                        {
+                            text: 'Recent Post DataTables',
+                            onclick: function() {
+                                editor.insertContent('[posts_datatables category="" posts="-1" ptype=""]');
+                            }
+                        },
                     ]
                 },
                 {

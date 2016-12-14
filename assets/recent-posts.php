@@ -315,3 +315,88 @@ if ( ! function_exists('thumb_recent_posts') ) {
 add_shortcode('thumb_recent_posts', 'thumb_recent_posts');
 
 /*recent posts thumb end*/
+
+/* recent posts datatables */
+
+add_shortcode( 'posts_datatables', 'posts_datatables' );
+function posts_datatables( $atts ) {
+
+    wp_enqueue_script( 'dataTables-init' );
+    wp_enqueue_script( 'dataTables-min' );
+    wp_enqueue_script( 'buttons-min' );
+    wp_enqueue_script( 'colVis-js' );
+    wp_enqueue_script( 'html5-js' );
+    wp_enqueue_script( 'print-js' );
+    wp_enqueue_script( 'databootstrap-js' );
+    wp_enqueue_script( 'buttonsboot-js' );
+    wp_enqueue_script( 'jszip-js' );
+    wp_enqueue_script( 'pdfmake-js' );
+    wp_enqueue_script( 'vfs_fonts-js' );
+    wp_enqueue_script( 'responsive-js' );
+    wp_enqueue_script( 'responsive-bootstrap' );
+    wp_enqueue_style( 'dataTables-css' );
+    wp_enqueue_style( 'dataTables-bootstrap' );
+    wp_enqueue_style( 'dataTables-buttons' );
+    wp_enqueue_style( 'dataTables-responsive' );
+    wp_enqueue_script( 'moment-js' );
+    wp_enqueue_script( 'datetime-js' );
+
+    wp_enqueue_script( 'lity-js' );
+    wp_enqueue_style( 'lity-css' );
+    ob_start();
+    // define attributes and their defaults
+    extract( shortcode_atts( array (
+        'posts' => -1,
+        'category' => '',
+        'ptype' => '',
+        'order'     =>  '',
+        'orderby'   =>  '',
+    ), $atts ) );
+
+
+    // define query parameters based on attributes
+    $options = array(
+        'posts_per_page' => $posts,
+        'post_type' => $ptype,
+        'category_name' => $category,
+        'order'             =>  $order,
+        'orderby'           =>  $orderby,
+    );
+    $query = new WP_Query( $options );
+    // run the loop based on the query
+    if ( $query->have_posts() ) { ?>
+
+        <table id="postsTable" class="table table-1 table-striped dt-responsive" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th class="col-md-4">Post Date</th>
+                <th class="col-md-4">Title</th>
+                <th class="col-md-4">Summary</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+                <tr>
+                    <td scope="row">
+                        <span><?php echo get_the_date('D, F jS, Y'); ?> </span>
+                    </td>
+                    <td scope="row">
+                        <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('%s', 'heels'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
+                    </td>
+                    <td>
+                        <?php the_excerpt(); ?>
+                    </td>
+                </tr>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
+
+
+            </tbody>
+        </table>
+        <?php $myvariable = ob_get_clean();
+        return $myvariable;
+    }
+}
