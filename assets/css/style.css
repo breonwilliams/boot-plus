@@ -195,6 +195,15 @@ img {
     padding-right: 10%;
 }
 
+.fill-height {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-item .height-100 {
+    flex: 1;
+}
+
 @media screen and (max-width: 768px) {
     .flex-wrap {
         display: -webkit-flex;
