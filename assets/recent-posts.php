@@ -369,9 +369,9 @@ function posts_datatables( $atts ) {
         <table id="postsTable" class="table table-1 table-striped dt-responsive" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <th class="col-md-4">Post Date</th>
-                <th class="col-md-4">Title</th>
-                <th class="col-md-4">Summary</th>
+                <th>Post Date</th>
+                <th>Title</th>
+                <th>Summary</th>
             </tr>
             </thead>
             <tbody>
