@@ -132,6 +132,12 @@
                     }
                 },
                 {
+                    text: 'Percentage Circle',
+                    onclick: function() {
+                        editor.insertContent('[perc_circle size="medium" percent="30" class=""][/perc_circle]');
+                    }
+                },
+                {
                     text: 'Search Overlay',
                     onclick: function() {
                         editor.insertContent('[search_overlay]');
