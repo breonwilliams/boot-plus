@@ -50,7 +50,7 @@ function wpb_adding_scripts() {
     wp_register_script( 'masonry-min', $bootplus_shortcodes_directory.'assets/js/masonry/masonry.pkgd.min.js', 'jquery','1.0',true);
     wp_register_script( 'masonry-init', $bootplus_shortcodes_directory.'assets/js/masonry/masonry-init.js', 'jquery','1.0',true);
     wp_register_script( 'search-overlay', $bootplus_shortcodes_directory.'assets/js/search-overlay.js', 'jquery','1.0',true);
-    wp_register_script( 'imagesLoaded-js', $bootplus_shortcodes_directory.'assets/js/masonry/imagesLoaded.pkgd.min.js', 'jquery','1.0',true);
+    wp_register_script( 'imagesLoaded-js', $bootplus_shortcodes_directory.'assets/js/masonry/imagesloaded.pkgd.min.js', 'jquery','1.0',true);
 
   wp_register_script( 'dataTables-init', $bootplus_shortcodes_directory.'assets/js/datatables/dataTables-init.js', 'jquery','1.0',true);
   wp_register_script( 'dataTables-min', $bootplus_shortcodes_directory.'assets/js/datatables/jquery.dataTables.min.js', 'jquery','1.0',true);
