@@ -83,6 +83,12 @@
                                 editor.insertContent('[posts_datatables category="" posts="-1" ptype=""]');
                             }
                         },
+                        {
+                            text: 'Related Posts Masonry',
+                            onclick: function() {
+                                editor.insertContent('[relatedposts ptype="" max="4" column="col-md-4" class="" orderby="rand" label="Related Posts"]');
+                            }
+                        },
                     ]
                 },
                 {
