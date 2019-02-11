@@ -27,7 +27,7 @@ if ( ! function_exists('list_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
-            'category_name' => $category
+            'category_name' => $atts["category"],
         );
 
         $query = new WP_Query($args);
@@ -138,7 +138,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
-            'category_name' => $category
+            'category_name' => $atts["category"],
         );
 
         $query = new WP_Query($args);
@@ -242,7 +242,7 @@ if ( ! function_exists('thumb_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
-            'category_name' => $category
+            'category_name' => $atts["category"],
         );
 
         $query = new WP_Query($args);
