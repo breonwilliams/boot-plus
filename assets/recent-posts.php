@@ -63,8 +63,10 @@ if ( ! function_exists('list_recent_posts') ) {
                 $output .= '<div class="caption">';
 
                 $output .= '<h4 class="media-heading"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h4>';
+                $output .= '<div class="post-excerpt">';
 
                 $output .= get_the_excerpt();
+                $output .= '</div>';
                 $output .= '</div>';
 
                 $output .= '</div>';
